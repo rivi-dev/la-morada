@@ -1,4 +1,7 @@
 ---
+const WHATSAPP_NUMBER = "527971000165";
+const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("¡Hola! Vi el sitio de La Morada y me gustaría más información 🌲")}`;
+
 function seededRandom(seed: number) {
   let value = seed;
   return () => {
@@ -63,7 +66,9 @@ const stars = Array.from({ length: 50 }, (_, i) => ({
         </a>
 
         <a
-          href="#contacto"
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
           class="rounded-full border border-white/15 px-5 sm:px-6 py-3
       text-sm font-medium tracking-wide text-mist transition hover:border-canvas hover:text-canvas"
         >
