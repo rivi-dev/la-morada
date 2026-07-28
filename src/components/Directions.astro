@@ -25,9 +25,9 @@ import { directionCards } from "../data/directions";
             />
           </a>
 
-          <ul class="list-disc space-y-1 pt-10 px-6 text-sm text-stone self-start">
+          <ul class="list-disc space-y-1 pt-10 px-6 text-base text-mist self-start">
             {card.bullets.map((bullet) => (
-              <li class="mb-4 text-base" set:html={bullet} />
+              <li class="mb-4" set:html={bullet} />
             ))}
           </ul>
         </div>
