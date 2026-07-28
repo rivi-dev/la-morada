@@ -1,0 +1,37 @@
+---
+import { Picture } from "astro:assets";
+import { directionCards } from "../data/directions";
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16 border-t border-canvas/10">
+  <h2 class="mb-8 text-3xl font-display text-canvas">Cómo llegar</h2>
+
+  <div class="grid grid-cols-1 mt-10 gap-x-8 gap-y-10 md:grid-cols-4">
+    {
+      directionCards.map((card) => (
+        <div class="flex flex-col items-center gap-3">
+          <a
+            href={card.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block overflow-hidden rounded-2xl shadow-lg/40 shadow-canvas"
+          >
+            <Picture
+              src={card.image}
+              alt={card.alt}
+              formats={["avif", "webp"]}
+              quality={75}
+              class="aspect-square w-full max-w-95 object-cover md:max-w-70"
+            />
+          </a>
+
+          <ul class="list-disc space-y-1 pt-10 px-4 text-sm text-stone self-start">
+            {card.bullets.map((bullet) => (
+              <li class="mb-4 text-md" set:html={bullet} />
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
