@@ -5,6 +5,8 @@ import { getGlampPhotos } from "../lib/getPhotos";
 import { featureIcons } from "../lib/icons";
 import IconButton from "./IconButton.astro";
 import logo from "../assets/branding/la-morada.png";
+const WHATSAPP_NUMBER = "527971000165";
+const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("¡Hola! Vi el sitio de La Morada y me gustaría más información 🌲")}`;
 
 interface Props {
   name: string;
@@ -67,6 +69,18 @@ const photos = getGlampPhotos(galleryFolder);
           </ul>
         )
       }
+
+      <div class="mt-16 flex justify-center gap-4">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-full bg-canvas px-5 sm:px-6 py-3 text-sm
+        font-medium tracking-wide text-ink transition hover:bg-muted"
+        >
+          Preguntar disponibilidad
+        </a>
+      </div>
     </div>
   </div>
 
